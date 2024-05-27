@@ -1,0 +1,759 @@
+# Detailed Methodology & Walkthrough
+
+After gathering as much CEX (Binance, Coinbase, Kucoin, Bybit, OKX) Hot Wallets & Gas suppliers as possible using explorers, a simple Dune SQL request gathered about 2M5 CEX deposit addresses (the address a user sends assets to in order to deposit into a CEX) were collected.
+
+With Dune Dashboard once again, I filtered the CEX deposit addresses that received funds from at least 7 addresses that interacted with Layer Zero regularly (using an unofficial Dune Dashboard). 
+
+Those 7-300 sized clusters of active L0 addresses that share the same CEX deposit address were used by a script to form bigger clusters using addresses that interacted with the addresses of the cluster but not with the CEX deposit address. To limit false positive, an address had to be directly linked to at least 4 other addresses of the cluster to join the cluster. Final clusters of less than 20 addresses (21 with the CEX deposit address) were discarded.
+
+That is the first layer of detection/proof. Every cluster has a big chunk of addresses that share the same CEX deposit address, and the addresses are linked to at least 4 other addresses of the cluster. This layer is fully automated with scripts and has, even though it's less that regular clusters due to the multiple interactions & the common CEX deposit address, a percentage of false positive addresses.
+
+This is where the second layer of detection/proof comes in handy. For every cluster in this report, every addresses has been scanned **manually**, the false positive evicted and on-chain arguments added to the description of the cluster. Those on-chain arguments are the second layer of detection/proof and varied: the addresses of the cluster executing the same transaction at the same time with the same amounts, a similar pattern of transaction for L0 activities etc... Plenty ressources were used, like LayerZero Scan, Dune, Debank, Arkham, Etherscan and else.
+
+This second layer done 100% manually, even though it is not time efficient, is a way to ensure the sybil nature of the clusters and limit the number of false positive. It's also a way to demonstrate work has been done & the report is not simply a dump of a huge list of addresses.
+
+The combination of the two layers, the cluster, the usage of the same CEX deposit address for a big part of the cluster & the similar on-chain activited manually reported makes for a good detection with as little false positive as possible.
+
+Activity predated of the Snapshot was screened over 14 blockchains
+Lastly, please note links on Arkham diagrams in this report are often missing. Arkham only supports 7 out of those 14 blockchains. 
+
+# Reward Address (If Eligible)
+
+
+0xFeB288955f10d59c8380bD8107839Fd53Dd0D250
+
+This is a fresh address.
+
+
+
+As the cluster are independant and a description comes with every cluster, the two following sections have been regrouped.
+
+This following section is an rotation of the list of the addresses of the cluster and its description: the CEX deposit address some of the addresses share, an Arkham diagram & the second layer of detection.
+
+
+
+# Reported Addresses & Description
+
+
+
+## CLUSTER 1
+
+The addresses of the cluster share the same OKX deposit address 0x3422F9A4Dd4B8801067CF5ca698EFc2db91A02d1
+
+![Capture d’écran 2024-05-27 à 22 12 39](https://github.com/battletron58/fork.md/assets/170870109/3438713a-37e5-474c-b7e7-814bc7f6fa4b)
+
+
+```
+0x6fec6680bfe276bc7fd975e74b70754b052ea227
+0xb93275c67bf7dbf8441d5e6e80c9a63eeced2aab
+0xafb8ee503bd4985615beef398db46a4be790652d
+0x9ddb8c06f33abd385352a0e03a54c69f2e7ea03b
+0x904916da7854ce28246fefe64c4de1556bfce21d
+0x193a34cda33026abc493519ab20be897260a7c7a
+0x027dc40673e6a7432dc4045b7a1b281a08e514e7
+0x15f5a490e9838ea54f8253d280fe9b5ad8f71b06
+0x9b59f72b01570b7c81734df11d991ca599141b36
+0x8b34430f0972a35d6ff59a5b75a130e1885ddba0
+0x293c6ecc0158a070a82f69944a0b001fc83b3de8
+0xb43e2919b5885768349aebfbd91530a29e0aab50
+0xb979caae8dddd39ff3105ff5f28d23eb001e1734
+0x46bca4fe837f7ad31ac5c50c828959f45dd27f56
+0xbfba653e0fbe29b172004aa1340bbcb82d65aa77
+0x78994d904cfdccb9ac83fde576c194c1bb248717
+0xa3abd675e8faf18e4b127936e998ff20bc230aeb
+0x767a9e751cc4163fa6ddec5904bdc50c225672ab
+0x77a5b49e0b68a238aceda24e8d430bc09deeb09b
+0x7113113155fe78af48b987dcf852e87980bee24a
+0xdcee588f334cc0c8b9aeec3491d5a9b43ed14dc1
+0xbc37b70b462bf542036b7ec872baa72349027607
+0x0bcc4f50ab9948364d2b160e2448c73dff36dd27
+0x289783c43669a36e7554950bfc6d89c6b49ab435
+0x3c83596a2c5257d86bf3ce9744e1c256eaf58bd4
+0xc150c57da8092b7e5b9aeb9ed4602673b8a92cc0
+0x2952f470c64ea3d128deb3e485a73d16991c1997
+0xe3d0f84b06e96f0a0c8838f118dd323dd7e2bf42
+0xa261a0fd1243abf96e2dae5393e972d70387d205
+0x88c8e3f52eae00b75c59a129f4ba3252836ae3fd
+0x22a7e956585c053490c101be210ac7abdf72ddca
+0x2f9a32a70fefdd00d1db072e3d5159636eb51fab
+0x19009cffbfd606ff589a5883711951e7266a2d9a
+0xe432a17884edabdf2334bf444c447a1165a72fb2
+0x967c335b4892cd0291d4175990da8252c3a01a9e
+0xa98d63a69818be52522cad16d27f25f512daa847
+```
+
+We can see that the person has exactly the same TX whether it is on stargate, zk sync, Base, arbitrum on the same dates to a day. 
+
+![Capture d’écran 2024-05-27 à 22 15 33](https://github.com/battletron58/fork.md/assets/170870109/dc52cae0-eecf-43d9-8473-37da6934ab23)
+![Capture d’écran 2024-05-27 à 22 15 24](https://github.com/battletron58/fork.md/assets/170870109/3fb2fb66-bbf1-469f-8b36-c5919fcbfe6e)
+![Capture d’écran 2024-05-27 à 22 15 10](https://github.com/battletron58/fork.md/assets/170870109/6f3c0cc3-31bf-496f-99cc-77337a3bb6a6)
+![Capture d’écran 2024-05-27 à 22 15 00](https://github.com/battletron58/fork.md/assets/170870109/8d97f9a9-8a54-4067-946c-3eb4b313ae65)
+![Capture d’écran 2024-05-27 à 22 14 50](https://github.com/battletron58/fork.md/assets/170870109/088f3209-0718-4005-be6b-12d5f5959428)
+![Capture d’écran 2024-05-27 à 22 14 43](https://github.com/battletron58/fork.md/assets/170870109/89eeccb6-007e-47ca-a021-37f63bda45bd)
+![Capture d’écran 2024-05-27 à 22 14 37](https://github.com/battletron58/fork.md/assets/170870109/ba99d174-e8eb-48bc-9565-95109b440b88)
+![Capture d’écran 2024-05-27 à 22 14 28](https://github.com/battletron58/fork.md/assets/170870109/9fea7dfb-8987-45a5-b55e-8386ac4499cb)
+![Capture d’écran 2024-05-27 à 22 14 20](https://github.com/battletron58/fork.md/assets/170870109/817331a3-ca24-48d4-8fce-fb87ef61784a)
+![Capture d’écran 2024-05-27 à 22 14 09](https://github.com/battletron58/fork.md/assets/170870109/b176ac06-a3c1-4065-b99b-4cab2f5ecaec)
+![Capture d’écran 2024-05-27 à 22 14 04](https://github.com/battletron58/fork.md/assets/170870109/2e5d88c8-64d9-49d4-add6-75dd01a62d95)
+![Capture d’écran 2024-05-27 à 22 13 59](https://github.com/battletron58/fork.md/assets/170870109/e0532ec9-5591-40ed-bc16-7c50544dae74)
+![Capture d’écran 2024-05-27 à 22 13 48](https://github.com/battletron58/fork.md/assets/170870109/5fe63a90-e945-46c4-8ca6-32028524773a)
+
+
+
+
+
+
+## CLUSTER 2
+
+
+The first 15 addresses of the cluster share the same Binance deposit address 0xcBEbC0b4273ea6e1478D2c3d14545bAc0BCDA4D3. The rest are linked to numerous addresses of the cluster, multiple times.
+
+
+```
+0xdd1e577965b2c1b670615a6ffed1355436b12544
+0x3066ed747b82258510cded3308308c0e403d0cdc
+0x0cfcf74538b0ca2b53207662b977bddb55cf7eb5
+0xfd0d68e2aac8b7b3217502eb2ff5b5fce1ccbf33
+0x23ae00022346c03cf978a6328c31492ea0c341e2
+0xd289681c9fe7426312652ad4930a6bb10110a34b
+0xbf263ab13f0e81d6efd9788286647c7972b56259
+0xbcd7be9ed26547a4b52fa8b1eef121267099d09e
+0xd4dac4044eb3fe0d20118617b4607e3ba791f649
+0xb8ac6244c99c6b4f727a22deb4727bf422ac3b8b
+0x7e64a4f121780261d8926514b81d2b042624fd11
+0x10a0284bed9c8971bba48d577f33050346916f59
+0x1658065016ae444bf6d1a044569dfb6b0427e204
+0x1e5d31ad1dd262a7ff69978c6b110afdabfe633d
+0xf1112a35126c49691e8cbc2b7d1ece71feaf9b88
+
+0x34bd4c0d7dbf70a2ac00ea19e42286721ae4c2ad
+0xb4a9ae18e83c5bcc3128d88c90dd0f985d9cc59c
+0x8dc6ad375e4322364ef148d6cbab4e548749669c
+0xbddcd3a54006120afbb12fb213bc203c2cd24f4b
+0xcdf9a75eb0d63c6ecc94eb41ded12483493da057
+0x4ceb4a23e0214f2aab28beb9150565a25dc92919
+0x56bf7b48409da3e8861654246b0558c34f972bc9
+0xf61cd443edc2bb5790cb8bf5357b9078b1e5701e
+0xc85e85d918e9d0daa00dc006db47bd63c82d7cd6
+0x16327af129c8ec84a9eb31f789041944a0b9ec10
+
+0x39f5d1c9fdd13cc5ba6e950dcccd2189987765dd
+0xbdd8ea72d95418d9ac7adf92ba220d945e725748
+0xee93d59ad3830bedaa3105002ab3464e195c558d
+0x27ca374bb716a812eacaa4cda4de812c6904654d
+0xa5f771c8efe2cd2ad63b9e59d54b5fb95bd3a3fa
+0xd54efe39a2e6402d65a1f693c7b875c014c8d552
+0x7495c3774b1045e2d24565b81f0e79f09d4ec829
+0x021664fac544d607f112a3292a8d57001f6e4a08
+```
+![Capture d’écran 2024-05-26 à 16 58 56](https://github.com/battletron58/fork.md/assets/170870109/869ec02d-f979-4a83-a7c0-be4eaa27e9f5)
+
+
+the addresses in each gen have exactly the same transactions
+
+
+
+</details>
+
+The addresses also all have similar ENS.
+
+The address share the same CEX deposit address, are part of a cluster with multiple links between one another, and have the same on-chain activity. This is a big scale sybil operation, probably the result of scripts.
+
+## CLUSTER 3
+
+
+The first 11 addresses of the cluster share the same Binance deposit address 0x7bd8cE0583573924039485a9F5A12D12A5f184b3. The rest are linked to numerous addresses of the cluster, multiple times.
+
+
+```
+0xff6a726f83286d8f54273b5b816762dfee47419d
+0xbf5310fae4d7a0c6df0452bcda09aefa2748ad59
+0x1fb9580e0b19956b90351c825ae7819f1ee0257b
+0xe4036aca909cd049f9a7b7333961e1c1db7fb35c
+0xff36b9cb75c9178841d8b75baf9776bfa59fbe9d
+0xf3aa68cadb8f25ad25b054841df221d234b8b374
+0x29ff9cf03488c843e5ec55a5517ccddb849d1e98
+0xa218d0ce0693c41a96f58667ba34f5f489e75628
+0x81cec7a198d6cf03b9838511a33247fb7d4a68c7
+0x35e42e5e4e21122573e9071877be887fe3bf76d7
+0x6ec8b8cec5645066fda40c6c6d6c3b749a565755
+
+0x73342f619780312b3f6d85af48c64aaf8c32315d
+0xa0b0e61e3eafee16b8fa30d97bc49f4151070b43
+0x5a3533bc8606bcdaaa0a2ac6e8b5d81c9c634994
+0x4d588b27603d9b8fe28989a2bbdf0df2cb7dec56
+0x175124a26cd4a1213c351c1a95c23d114543cd49
+0xe597d96afa6f15af67a72477b62464a7168bf8ff
+0xd2881cda4aca733e5ba73b75196913e4a1c9d916
+0x0d5901ecad0bc8786a9b6fa53a19ce465ccba199
+0x98e640296317a9f5ab7078ebeb7e685da030a19a
+0x63283283e5dda71059595789246ec09ec624d92f
+0x9b2855918fff918739d96b1d930b1b3e3a0a9500
+0xd633e9a50647707279dc8aa4c20f57959cf4c393
+0x1c139649763b154b18a3407dbbc7c29c63f8e0e6
+0x0f5d4386d169757603890b5e31c2855a752ce3fa
+0xb7af9add135a1ac4e6a739f7c027abe4071d9ef2
+0x3c8d349e229941885949e846410bd0df7e663118
+0x09d20328ab7c1ef1be0348e49beadcff972f1da4
+0x39cc43b3068a208ae87042f927fb53b85586c654
+0x5d2b49dd577a65bb18208fb7e9be307f4b028a20
+0x345ebd1b3c20a7c249f9a8f1b6fcde7e531f2985
+0xbdc5e1346f84ad123fa6dae0e39ad1045979f840
+0x2bab2e743a32a054eae3f26bd921f13116ee4f7a
+0xbec5c94c0ce7a6b27e5d43d8b0da2701d6393537
+0x3d0cd6508fd2a1baee0a0c7f596d63e23676616a
+0x7345baac1f54eb1d0218d7a5d1c842bef40ad475
+0x01362d5923530672d6a887ccdfc8b156cee97824
+0xeb4413d6ac1b0225523eeb00f1dd4c1d733621dd
+0xbfc33cb98babcf67b4e6dd6aa3b704b58faae089
+```
+
+
+
+a uses scroll on all these addresses in the space of a few days.
+Did the same with polygonzkevm
+Linea with 35 of the 39 wallets present with the same tx 3 days apart.
+
+Cluster + same on-chain activity at the same time, this is without a doubt a sybil operation.
+
+
+![Capture d’écran 2024-05-27 à 23 12 17](https://github.com/battletron58/fork.md/assets/170870109/e6d204fb-c921-447d-bc5c-91a9c5042744)
+
+
+
+
+
+</details>
+
+https://scrollscan.com/tx/0x6c1f1ad3eba0b92dda2f60bb0975c0c644897ca24439e4044f003ed0d403a852
+https://scrollscan.com/tx/0xa589220e28ba60b0d1bd12607c917b93841229a66a5de6f2873b8363975a7e18
+https://scrollscan.com/tx/0x707f0770239301395306285eb9fb6670f13e69b725ce86a01b9dd7946477f7de
+https://scrollscan.com/tx/0xa6ef816118e018718a0110c25fd8f3374963837a1c7b05de717f957ddd459f41
+https://scrollscan.com/tx/0x232cb486c81af7ed7bfb8b72fa0c51d025bce43c9a340ed45978e2dbebae49e2
+https://scrollscan.com/tx/0x232cb486c81af7ed7bfb8b72fa0c51d025bce43c9a340ed45978e2dbebae49e2
+https://scrollscan.com/tx/0x9800124f45e1808cdf480d6a29b347554d0b2d174e443ae5993d016ad70695b0
+https://scrollscan.com/tx/0x0bc9ff70123e3fe90df8ac3ae9d154627862e47cad39d55eed6e78920d1605a3
+https://scrollscan.com/tx/0xd975260e986eb552ed4b5830b677a4c7836c37b94ef53a2941e74cbf1a07497f
+etc...
+
+
+## CLUSTER 4
+
+The first 16 addresses of the cluster share the same Binance deposit address 0x80EEd1A8AEf14e314abDC9526cc68311b1F521D3. The rest are linked to numerous addresses of the cluster, multiple times.
+
+
+
+```
+0x151a4b4cfe8919a424571dce0e2f6dd6858a1049
+0xb032a6ae9954af7a5f9036c5e8fdfd33e27b8cc1
+0xc212688ad84288f4f6798f1d924b11c6753f1250
+0x65fc264e79884bf9de59def2d10efcc99eff4882
+0x7a0267e318c11fcecc34a64ccca36b465f921099
+0xb03fd6e2616bb257a57f2eaee598448b2db34f67
+0xc25709a2b2254981b0fc552cb72f6ff4022b430f
+0xc2d48b4b3fee9128afe9417a5bf1612e2f757fd4
+0x373af9d7d2a3b6ba66d0ef82f372c5e9534c1d48
+0x6455a81f698d1515672f37931a08658da786c573
+0x8abd2349ce907da1118fdb5d0d114fac738d603c
+0xd740d7bdf69c47efc5b99b848b4f066dcde81a56
+0x107fa3db5502226eea63fe012d17fba9738f1239
+0xc8cbf79de199d0df4ca921f8d1fbab96042e5ee4
+0x96a47d0224c3688fb8dcbe3fa0fce346ae9a49f6
+0x87bc8b252f6878d29ae5d3d0b50018ac080cb10c
+
+
+0xf67ddefd2b008e946071327ab65b820cc87048a7
+0x662916ba6f5c3ca56055de4dfa38c398fd4c1d43
+0x9bc0be9e82a1d5af7f06906468e2cbf59e0f4d22
+0xc1c132020219323777627efa95deb497bccfe42a
+0x70ef4e26257d0ee1158621411351282c6389770a
+0x8acc5123ef77f2dd128236c63e3a06ae9dbab9c2
+0x25966a229531e20761c83ccefd0a8a32f1ffe09b
+0xc48b79452f526624687d5033d7dca90914e9e25f
+0x95d7895bdf3e9f525987791d55597edac5533504
+0xc3854722d3556aefbac343306758ff90c54f2764
+0x064f8379341bd86c9aa0f542eb8ad862e414045d
+0xb4d151dc45877cb172ca30b7a26bb0f26bbd379d
+0x60f98c288b24b8a2486011677aebd397cda7b5bf
+0x70ab4200d439d11681d73f4a0dedfe976e0cff70
+0x087468131c72dfacc0c4ce820d58f090348e1e0e
+0x7c5b3b4e65c6cccc77bf557d4b9b4df74678c133
+0x7b79dfd199950e337c308a11e66fd3896bb9c700
+0xd51efc3cc62ae48132c8688a7afc94a7d460d690
+0x6939b65696f4ef8d5e2b92d3d6447b95f0155058
+```
+We can see that all these wallets used stargate on the arbitrum blockchain within 2 days of each other.
+
+What's more, we can see that all the wallets have exactly the same patern, more or less 2.5/3 bnb received per wallet, using paraswap for swap (probably to farm the airdrop of the time) then sending bnb back to another wallet and all this on the same date.
+
+You can rewrite  all his wallets like that, because he linked them all in the end. 
+
+![Capture d’écran 2024-05-27 à 23 06 38](https://github.com/battletron58/fork.md/assets/170870109/59252c45-4535-4ac2-a3bd-0143a77eeaaa)
+
+
+
+![Capture d’écran 2024-05-27 à 02 37 18](https://github.com/battletron58/fork.md/assets/170870109/5aaa7c61-307a-446b-b3fa-c6e72e50d1af)
+![Capture d’écran 2024-05-27 à 02 37 12](https://github.com/battletron58/fork.md/assets/170870109/30627b43-0944-4406-8988-b2a59a64b7a0)
+![Capture d’écran 2024-05-27 à 02 37 07](https://github.com/battletron58/fork.md/assets/170870109/3072ab09-a416-4a71-bd46-585719b4ff7a)
+![Capture d’écran 2024-05-27 à 02 37 00](https://github.com/battletron58/fork.md/assets/170870109/0f914dbd-2d74-4188-86e1-4cbfb433eccf)
+![Capture d’écran 2024-05-27 à 02 35 07](https://github.com/battletron58/fork.md/assets/170870109/231aaa9e-43d8-4c2f-9585-9cd5e1e7e9b3)
+![Capture d’écran 2024-05-27 à 02 35 01](https://github.com/battletron58/fork.md/assets/170870109/672b9516-c483-4d5c-9063-8e8712812fd3)
+![Capture d’écran 2024-05-27 à 02 34 54](https://github.com/battletron58/fork.md/assets/170870109/b87a588c-5a98-4585-a7cb-46f1fad87f92)
+![Capture d’écran 2024-05-27 à 02 34 44](https://github.com/battletron58/fork.md/assets/170870109/accf7a93-69af-480a-a5a0-1e86842ef987)
+![Capture d’écran 2024-05-27 à 02 34 37](https://github.com/battletron58/fork.md/assets/170870109/263ef994-3580-455b-816a-9ec702e66764)
+![Capture d’écran 2024-05-27 à 02 34 27](https://github.com/battletron58/fork.md/assets/170870109/83b7b2b4-1256-4ac1-88a4-14628fbda656)
+![Capture d’écran 2024-05-27 à 02 34 16](https://github.com/battletron58/fork.md/assets/170870109/db8265b9-fb22-4246-9c42-bdf59619dd80)
+
+# CLUSTER 5
+
+
+
+```
+0x8dcea5acb52e0399c32d76da9ed044214c3d0058
+0x4f81573a58b1f2a1c188dc380d75c0c64e8b083a
+0xff2824ffb44e9aee20ab2f45c8e3cede78eb6ac3
+0x6012b75b1349e1016907bba9c2991965fba9a583
+0x1dec5b77a64bce04a23bdb342dc4d7df7b052666
+0xce0b24cb42bfc3c9961477a9377c2e039be60544
+0x13f8a645731536794055605ec557bad8a0e2e99b
+0x7bff8869ffaf2e81bf98a7673f75ec1e60e20b82
+0x1e3b689cf7ef8961a65eb7b15858da72edaa0ec0
+0x8a570a1b9fcc80f076f6a3d344dcf22a2651bd17
+0x92c319048f390b3bb3d7aa8820e5314b37a7bb57
+0x5b69090e909487f7932d3465e402b304f38434fd
+0xd2b74eb8aa866da2d53e1d4607fb089eee1a1e3e
+0x772b5f9785d7bf2684731f0be72d973914eb4d10
+0x5cf6ed65242c2057564e8a17a2bf89590280c5c3
+0x86a74490d015debc5431ead298cda1e276095c71
+0x3701dd8b968f5ea94e335adeb3e0aff4b14aeb54
+0x9c3c471244b4c4c49c8de2a83d2cd1471ae08557
+0x6afb8f3dc95ded90fbc8366c0291198056f8b7c9
+0x4888c5ed91289e099059570154e322da1516d06f
+0x56876c52e83b36800d6d508e2edbb6a54195dcca
+
+0x92059ae1034ab2be7d213663b5fcb987e138c11f
+0xfafb9e03fd91d7d05e1867beb08a443f3daf136e
+0x9260feb5c7c30d087fb5e2d61d49b679ad8232fb
+0x3a5df16ca9335c564306519d55aacf62f9690208
+0x54b4950c4f3d456919492b719fc39d25f2f6e84b
+0x961dcf3ea60a99da9ad02af5cb97623e3eb1a716
+0xe09035250e82e9a8685d8975e0a98937f66bed2f
+0x7a8bf7cb5730dbf114777826ae7001aec32b136a
+0xd9975d1307416578179fbb518ac9f433bdd9384f
+0x4b77bc486a7f7a3bbaf1529206ed52174d013ba6
+```
+![Capture d’écran 2024-05-27 à 03 43 01](https://github.com/battletron58/fork.md/assets/170870109/84a5b50a-dea4-440d-a067-8d0e3f6da3bd)
+
+
+uses the same patern, you can see that it uses linea, Base, zksync and polygonzkevm 
+each time, on all addresses, he performed all his transactions within the same timeframe, 2/3 days.
+
+2-3 days to make all his wallets on base, the same on zksync etc. The coincidence is far too great, especially on 4 blockchains.
+
+![Capture d’écran 2024-05-27 à 03 35 53](https://github.com/battletron58/fork.md/assets/170870109/24c142b2-62ad-4a5c-b7a5-844bf23504d5)
+![Capture d’écran 2024-05-27 à 03 35 39](https://github.com/battletron58/fork.md/assets/170870109/94c36119-0e09-44b9-b46a-c7f844133b32)
+![Capture d’écran 2024-05-27 à 03 35 26](https://github.com/battletron58/fork.md/assets/170870109/a56e91e1-2ca2-42a9-abff-ba147e5b05c7)
+![Capture d’écran 2024-05-27 à 03 35 20](https://github.com/battletron58/fork.md/assets/170870109/c79bb572-da9e-4602-9cfd-d9e59ae91009)
+![Capture d’écran 2024-05-27 à 03 35 09](https://github.com/battletron58/fork.md/assets/170870109/77fbc042-6147-426a-8213-e565409e58d7)
+![Capture d’écran 2024-05-27 à 03 34 15](https://github.com/battletron58/fork.md/assets/170870109/eb20da09-d7f0-4d34-99c1-49a38065dbec)
+![Capture d’écran 2024-05-27 à 03 34 10](https://github.com/battletron58/fork.md/assets/170870109/b5c19d0d-39d2-4ccc-babe-038d567ff99e)
+![Capture d’écran 2024-05-27 à 03 34 02](https://github.com/battletron58/fork.md/assets/170870109/f42a5236-e29b-43ec-a2c2-7e504cb2243a)
+![Capture d’écran 2024-05-27 à 03 33 57](https://github.com/battletron58/fork.md/assets/170870109/ca6a5548-9d6c-44d5-848f-2173f06b325d)
+![Capture d’écran 2024-05-27 à 03 33 47](https://github.com/battletron58/fork.md/assets/170870109/2954db40-35a8-44b3-8e7e-435f49defe9d)
+![Capture d’écran 2024-05-27 à 03 33 43](https://github.com/battletron58/fork.md/assets/170870109/eb9ee0a8-e422-4f49-97c2-95bbd254b78b)
+![Capture d’écran 2024-05-27 à 03 33 34](https://github.com/battletron58/fork.md/assets/170870109/9c3ad74c-da7d-4442-94d6-c63af966f5be)
+![Capture d’écran 2024-05-27 à 03 33 27](https://github.com/battletron58/fork.md/assets/170870109/1dc90c57-f896-4a3e-b01c-a3a9e49a4672)
+![Capture d’écran 2024-05-27 à 03 33 18](https://github.com/battletron58/fork.md/assets/170870109/d71264e6-68f8-4dfe-9b04-50164b50a924)
+
+## CLUSTER 6
+
+On this cluster there are several indications that these wallets are sybil.
+
+by opening arkham we can already see that there are no doubts, but let's go further. 
+
+
+The addresses of the cluster share the same address 0x3Da61E0091023AEF38a2232BaeF1DCC1074d0D52. The rest are linked to numerous addresses of the cluster, multiple times.
+
+![Capture d’écran 2024-05-27 à 10 55 33](https://github.com/battletron58/fork.md/assets/170870109/33bef6a5-1e96-4262-bb20-bd8097ec402a)
+
+
+
+```
+0x5d72f0094c7a83726a74c715ccec6197a7256288  
+0xabe67cdb514ff5e6faae385e2847907b571d2f9c    
+0xf2eb85628009f20ddd1bbda5e0620fe0c952673a   
+0xfec0be79352d10e9e475736465ea6309911310c5    
+0x8df2b094e87e5ef7ed57182855f49f2900ab57df   
+0xcdadfe00114fdfb895df3aa24b9fb1f1700cce42   
+0x9f3373cd7f1abdb0da5ca4c0c0f18d411b0560b3   
+0xd3475e2680dbf9dc05156972861c7313296ce715   
+0x8fc6873649ad7ae6fba6a0fd8e1a02127756cc18   
+0xda0c29fffc8837193fe340e2947115ef53dea38d    
+0x5587786274a0650df6d31155efba5bc928ea1fb7    
+0x948b3c6c7cd182f9d0ac690e24118a4771168fd6   
+0xb271b3975773672ddd320098463dff814450f4de   
+0x4e616186c4799e2fc3004f2b3aad61e82b88cf3c   
+0xd00fe6764948f3a872ed6fad71473c391b9968c5 
+0xb30d2d121962e2fcce41ce35637e2f1940170781    
+0xd4a7018520636867354bde8fae32d49cf3908b74 
+0x79ccf393b58160709cc39eb711bb4a5c6ed0dd4d   
+0xc005697b02700750624f291ce48b93bb56faf80a    
+0x548c40fc9696f833fee1eb4e3db202047a537449 
+0x7bc08e9858bb64ca306405abacbe2eeebe7c29c7  
+0xfaad2bfc5afad1a4dfd71fad1ac346159d0fac8e 
+0x5be4aa36716374aee564d08011c6a8402a450a24  
+0x123366420a31c1ee398f00c7b0ba7cb2a353cbca 
+```
+We can see that he locked on stargate via the BSC at exactly the same date for these addresses, some examples if below
+![Capture d’écran 2024-05-27 à 12 03 02](https://github.com/battletron58/fork.md/assets/170870109/391078c5-c8d7-4266-8264-3d4c7192f3e2)
+![Capture d’écran 2024-05-27 à 12 03 02](https://github.com/battletron58/fork.md/assets/170870109/391078c5-c8d7-4266-8264-3d4c7192f3e2)
+![Capture d’écran 2024-05-27 à 12 02 43](https://github.com/battletron58/fork.md/assets/170870109/536841fe-ef8d-40fb-9706-e1940d4c5a8d)
+![Capture d’écran 2024-05-27 à 12 02 43](https://github.com/battletron58/fork.md/assets/170870109/536841fe-ef8d-40fb-9706-e1940d4c5a8d)
+![Capture d’écran 2024-05-27 à 12 01 56](https://github.com/battletron58/fork.md/assets/170870109/659f6e2b-fe7d-4656-a699-200b58e96546)
+![Capture d’écran 2024-05-27 à 12 01 56](https://github.com/battletron58/fork.md/assets/170870109/659f6e2b-fe7d-4656-a699-200b58e96546)
+![Capture d’écran 2024-05-27 à 12 01 50](https://github.com/battletron58/fork.md/assets/170870109/7a665d9f-9140-4580-b153-286b0cc4ac1f)
+![Capture d’écran 2024-05-27 à 12 01 50](https://github.com/battletron58/fork.md/assets/170870109/7a665d9f-9140-4580-b153-286b0cc4ac1f)
+![Capture d’écran 2024-05-27 à 12 01 45](https://github.com/battletron58/fork.md/assets/170870109/ec6fb3eb-c16c-4c97-b001-7e4f056da2d7)
+![Capture d’écran 2024-05-27 à 12 01 45](https://github.com/battletron58/fork.md/assets/170870109/ec6fb3eb-c16c-4c97-b001-7e4f056da2d7)
+![Capture d’écran 2024-05-27 à 12 01 13](https://github.com/battletron58/fork.md/assets/170870109/0c99114c-d18d-48d8-a135-2298c828c33f)
+![Capture d’écran 2024-05-27 à 12 01 13](https://github.com/battletron58/fork.md/assets/170870109/0c99114c-d18d-48d8-a135-2298c828c33f)
+![Capture d’écran 2024-05-27 à 12 00 49](https://github.com/battletron58/fork.md/assets/170870109/8813605e-0fc7-4161-bb38-54555be78aed)
+![Capture d’écran 2024-05-27 à 12 00 49](https://github.com/battletron58/fork.md/assets/170870109/8813605e-0fc7-4161-bb38-54555be78aed)
+![Capture d’écran 2024-05-27 à 12 00 43](https://github.com/battletron58/fork.md/assets/170870109/b933c543-f58d-42e4-9e4d-ba1fb27f2655)
+![Capture d’écran 2024-05-27 à 12 00 43](https://github.com/battletron58/fork.md/assets/170870109/b933c543-f58d-42e4-9e4d-ba1fb27f2655)
+![Capture d’écran 2024-05-27 à 12 00 37](https://github.com/battletron58/fork.md/assets/170870109/23bc3850-af75-4ffd-9d72-755dd8c7ddf5)
+![Capture d’écran 2024-05-27 à 12 00 37](https://github.com/battletron58/fork.md/assets/170870109/23bc3850-af75-4ffd-9d72-755dd8c7ddf5)
+
+He also sent the same amount at the same time to several addresses here. 
+
+![sonzhik](https://github.com/battletron58/fork.md/assets/170870109/1ec81cd3-dd34-4adc-a64e-0e1297ec28a6)
+![sonzhik](https://github.com/battletron58/fork.md/assets/170870109/1ec81cd3-dd34-4adc-a64e-0e1297ec28a6)
+
+
+## CLUSTER 7
+
+```
+0x0b0350d9f187fe370674660f19480a9c350e5e1e
+0xef141c35d05188abfd3e72e5972ad23c17f3d962
+0xc405b9c87f7f3747b39b817681f8443c295011cd
+0xef7c162363f0f411effa793f8ce1b8c7438b8f8f
+0xd01eba503229062f22f5671533f9e01537c74cc2
+0x2eb6412c6751bc76dac5a7333cc1876d3de4f63d
+0x24c275c4b6303b2dccb2fe5800c9b3c4fe1ac8c6
+0xfa87d56c8e035caf5254ffe2b190ef3838690190
+0x01b74306f8a4dc526a41dc55dfb1838a18d0b829
+0x33df5648ff93165571d4f497554c3100b68a4464
+0x8cdd7200b81007a88c3b720a466cd5b5180eae32
+0x0d713536a9bd726cc96d2c7f5a45bf12821d6d63
+0xbd9da9e9927e1cfa8a55a34119ec3cb0232d9cb7
+0x4fb60362c179b9c9758eec8759f2428acf968826
+0xe81fb81a8332a52991a643a8d390bada466fbe7f
+0x9dbddebb2bb9cbff62a5b8865d2b0b6b4706e808
+0x0c474fc85f242fe10d2882d7dc6eb4761f205089
+0x1d0202c6986c9ffd18398bfd10b7da6cc95a98e0
+0x42c6c819b640a61fb6b125130bda86346ee0fe0e
+0xe233c52b0486601d11a1af0e07629fd877a8912b
+```
+
+we can see that it went through lineabridge and then swap via syncswap on the same date just 2 days before and, above all, always the same amount and the same method. 
+
+![Capture d’écran 2024-05-27 à 13 11 43](https://github.com/battletron58/fork.md/assets/170870109/ca6a16d6-9f59-489a-a11d-44249b796725)
+![Capture d’écran 2024-05-27 à 13 11 31](https://github.com/battletron58/fork.md/assets/170870109/fc6064f9-95e7-48cb-a60b-323083aaa1a0)
+![Capture d’écran 2024-05-27 à 13 11 00](https://github.com/battletron58/fork.md/assets/170870109/b4a5d614-d7d9-4db0-a240-d15fe7d33224)
+![Capture d’écran 2024-05-27 à 13 10 43](https://github.com/battletron58/fork.md/assets/170870109/9e5acf86-72dd-4c6b-976f-e6ee02557698)
+![Capture d’écran 2024-05-27 à 13 10 36](https://github.com/battletron58/fork.md/assets/170870109/26b55059-9d64-478a-b1a2-651f53d251d8)
+![Capture d’écran 2024-05-27 à 13 10 20](https://github.com/battletron58/fork.md/assets/170870109/0f88ffd5-f505-4d08-81af-993b92b1867f)
+![Capture d’écran 2024-05-27 à 13 10 10](https://github.com/battletron58/fork.md/assets/170870109/2a8183d1-f2c4-4e8c-8289-f6400bd3bf9d)
+![Capture d’écran 2024-05-27 à 13 10 06](https://github.com/battletron58/fork.md/assets/170870109/9957a91e-3f75-4318-a89c-e21a4d95c71a)
+![Capture d’écran 2024-05-27 à 13 09 59](https://github.com/battletron58/fork.md/assets/170870109/2fc35ba1-c61d-4c7b-b334-deca92bfb315)
+![Capture d’écran 2024-05-27 à 13 09 55](https://github.com/battletron58/fork.md/assets/170870109/91922107-0357-49eb-980a-3bddbb16ff53)
+![Capture d’écran 2024-05-27 à 13 09 47](https://github.com/battletron58/fork.md/assets/170870109/fa0ba22f-236a-4110-9f54-84ab52cb4156)
+
+![Capture d’écran 2024-05-27 à 13 12 49](https://github.com/battletron58/fork.md/assets/170870109/d19c92c9-f2dc-4402-8df7-f081558eb592)
+
+
+
+## CLUSTER 8
+
+Th addresses of the cluster share the same Binance deposit address 0x663191e93b990d5c75712db699bcb8dd460f6577. 
+
+it couldn't be simpler 
+
+![Capture d’écran 2024-05-27 à 14 25 09](https://github.com/battletron58/fork.md/assets/170870109/2e39dd0c-5134-482b-a76c-f96457adee43)
+
+
+```
+0x54f916ec8152801d097a5c8875b3ec4d2f984606
+0x0dad4deee995fd809bbb41917b4d15c5d93f2ede
+0xb9c9340eb101a65ff4b2692694b644a0bcbf5d80
+0x4c051ea0624f8501f5ab15be943f9e2415075a90
+0xa9a5d57b894bfe7a9c1d52cb5a62fd184e1940cf
+0x2fbbf91175b582cfbb86f501d7e97b0bf5ba6c23
+0xed18a401308a395eea6460027679c50137963bcb
+0x9d6fad396a90db94f464d15a4c74434f77d98493
+0x3bade0b6b2c99507ad8b9b011f1a9bdb2e0225d1
+0x3c8e9d83b523cbe47f97d8a32e4f6c8e6ed6bbab
+0x614d75c97d633f562519939533132701263c35d3
+0xcba001e6963ff82108523aefafa4aa197d9b485f
+0x2e796a01c13e38f4453113c04610ac9608cc3eaf
+0xaaa1f36faf5a58c059046db58c38b8f272c6a514
+0xcb241cb80aedda6b7627a7380bc7953d6363fe6d
+0xc0174bad2848698d39138729e05a0eeb6c19edcf
+0x7892c84b96b971bc47cb66709f40e2ee2ef851a8
+0x9374165dc45b5e48d7bbc403fa1b47df7fe20ce6
+0xb602578ab785c72f67f5ed9e7aaf9454280a1e56
+0x79407abb32ae76830f86c9570ad118acca9236df
+0x7c74c25fc014ead619f2b47a9e3bc56563d19db2
+0x164b80d3cb77f5ef232890a6f2a85b432bdbe006
+0x8eceb88e640072be425242d1e996878ad7f362d6
+0x79d8f39fdf6f1f7e8b92741d22d3bea034bb2725
+```
+![Capture d’écran 2024-05-27 à 14 23 51](https://github.com/battletron58/fork.md/assets/170870109/6d15473f-b3c3-4f50-935a-757f339265b3)
+![Capture d’écran 2024-05-27 à 14 23 45](https://github.com/battletron58/fork.md/assets/170870109/62272c26-ea22-4645-b687-255fa5dd1fea)
+![Capture d’écran 2024-05-27 à 14 23 41](https://github.com/battletron58/fork.md/assets/170870109/06dd4d58-4d0c-4352-bbb2-89c3cc3131e7)
+![Capture d’écran 2024-05-27 à 14 23 27](https://github.com/battletron58/fork.md/assets/170870109/5e7345e8-9529-4b68-ac8b-49341b7b0b29)
+![Capture d’écran 2024-05-27 à 14 23 21](https://github.com/battletron58/fork.md/assets/170870109/6df93835-3fb9-4ebf-9efc-de1943f9eaba)
+
+## CLUSTER 9
+
+Th addresses of the cluster share the same Binance deposit address 0x2C8F2569A9e536c547e9670d16e85cf24cD556d3. 
+
+The rest are linked to numerous addresses of the cluster for the last one 
+
+```
+0x8a3b941ab9ae447ebbb7391abbc2bf8cf478215f
+0x22f45d561b9c529a5aa7ae8bbfcdc2b455e4a1f2
+0xba71005f63f9d43ec3ae8ad35a06e6a6776215ae
+0x752bb532909febba3f95a7f80dca359a64c047f8
+0xcb53792634b7a3b0142b593847c7f0c225ca849b
+0xb9ce3f996b6be611cdfb5d17baef9dd9f47f7dae
+0x0f19587dd9d366c2612eabc612b1ea77c8600a84
+0x44b9e22bf060cec2192341b874b7ad834f44ffae
+0x20aeaaa56836a825dcc707b99c0cca7ae1e646d6
+0x7896b4a47b7d848e064c5d4e3290c136e313b6ce
+0xde49209498cd76cb1c01cf3a69928d1de4e7c700
+0x16c04ef5b152fc570b61e9c0496bb279f8967e3e
+0x48c9b948e02831b92dda6198643e50b9beac19a7
+0x066f0629a112d905498bdbae2e37b2efb7ffa02d
+0xaeb46464e826f3861b6a42af9aa7922246aa013a
+0x7cf2279eca08609a7eb853656e5358321b629cc2
+0x66995df220f5f931d97118aec7a6f563e6a72328
+0xb7660bfd17e4e84807bba0266e8716649c9add3d
+0xb098c7c05fbb6a8feec68192413ecfea005fb5f8
+0x4f58a42a02c6737e13904ad4b3554a729264ea5d
+0x7456e8119f4395397a3b39df540a39932bef8ff4
+0xb12cac139e8aa8c1b1489af645adb54316d87560
+0xb0d14e058ecc7398672773b02c6bb1b3b30e5e04
+0xa47a858fa09afbf3d83b49bed3f5ee86aa569aa5
+
+0x6ea158145907a1fac74016087611913a96d96624
+```
+![Uploading Capture d’écran 2024-05-27 à 20.10.43.png…]()
+![Capture d’écran 2024-05-27 à 20 12 10](https://github.com/battletron58/fork.md/assets/170870109/4e50985d-4b70-4043-9ad0-2a17870aed6d)
+![Capture d’écran 2024-05-27 à 20 12 00](https://github.com/battletron58/fork.md/assets/170870109/6dec200c-a7b9-4207-91f7-bbd02cb9bfef)
+![Capture d’écran 2024-05-27 à 20 11 55](https://github.com/battletron58/fork.md/assets/170870109/1319dca8-04b1-4003-a572-2a9e35566080)
+![Capture d’écran 2024-05-27 à 20 11 49](https://github.com/battletron58/fork.md/assets/170870109/9190400a-795a-4f8f-b5df-d311e3038db3)
+![Capture d’écran 2024-05-27 à 20 11 43](https://github.com/battletron58/fork.md/assets/170870109/244d41c5-c318-4dd2-93ed-1094f2969b5f)
+![Capture d’écran 2024-05-27 à 20 11 38](https://github.com/battletron58/fork.md/assets/170870109/cba516e9-d277-43aa-ab2e-9b8740fe2070)
+![Capture d’écran 2024-05-27 à 20 11 32](https://github.com/battletron58/fork.md/assets/170870109/fc176c81-4398-4246-a9e7-0191c5dc7018)
+![Capture d’écran 2024-05-27 à 20 11 27](https://github.com/battletron58/fork.md/assets/170870109/4e2dc64e-2755-415c-96aa-741304a2d995)
+![Capture d’écran 2024-05-27 à 20 11 21](https://github.com/battletron58/fork.md/assets/170870109/c99678ac-e6b7-479d-b00c-aeaed567a86e)
+![Capture d’écran 2024-05-27 à 20 11 16](https://github.com/battletron58/fork.md/assets/170870109/3e168a90-ed63-4dd5-a2a1-503435fb0bf5)
+![Capture d’écran 2024-05-27 à 20 11 09](https://github.com/battletron58/fork.md/assets/170870109/5c217cb0-b36d-4026-b737-40d14ad155be)
+![Capture d’écran 2024-05-27 à 20 11 03](https://github.com/battletron58/fork.md/assets/170870109/29dbabf7-6632-43bd-9ee0-60e952016b5a)
+
+## CLUSTER 10
+
+The addresses of the cluster share the same OKX deposit address 0xCd43163B262baA8f852ff421579C822f9AD34620. 
+
+The rest are linked to numerous addresses of the cluster for the last one 
+
+```
+0x0a6f26e529d1062b583c302ee17c590200f1d1f0
+0x6f4987cfee2d8e0c27b0fdbcdce155fa02eceb43
+0x4ff7bd2753bafc36b9af9057f9dd4914c80dfa06
+0xae3a7439e97650c471a175dc4bdcd4c5aa99e5f9
+0x40a2696256a94b811546c6c8f9abd7c2d27a7391
+0x66c8bbf16231777e528c53009644a4416a85538f
+0x6ea90380de962ccb2d81856118e1ff6e0b5cc431
+0xfae78ae35e1040cce4357313498fc1073114d6f5
+0x22f6f12927a649f960001259853c7805b40c6705
+0x3824831aeed8c9227f9876246a39e03e37de973a
+0x9a582f5f0529acfaf49d72e2506a23d0c88ec158
+0x1abaea61ee07fc640d9e3e26464dfb2fd626026c
+0x15eb994dfe82a95d7c8050eb6837837d02d4eff1
+0x0f26b070946e8c9ab7253937adc280d60ae75ffa
+0xf7d4f68c508dbe9cb0e4b88100358cdf4e97d084
+0xafbfd11c1272fbe47af40bd0145c9d5348745e97
+0x30cab9a7381863905093aa3578c7db87d054c93c
+0xf74a4eec5df2eb1f8cfd85b29bb5941ee2ee724d
+0xe95a2f42a8b2d623424f26f9596e7cc97e63899a
+0x9c82d812c1096af30507fc841a76a19a98576a31
+0x85f60809a8b30e6183e2f8b1a4149d7172235c23
+0x95bd9e3f3e87bad897316efc9b305954e58e1509
+0x18306ecb2a3614c9f747efc9cfa0ca2a2bf06232
+0x7366bbf1c1726d634166b014273c41b14115191a
+0xa175a3984bfb1adaf554d0d3a23b7d058eca27e6
+0x79d70babc9507240cdac73466303bd5b1d4608b5
+0x7dbbe17efa9d134effe96dc47eb11f826a3d3439
+0x56421d7a262bd2e535ad694e8aec58d6f17934f1
+0x2cef6f5952b6dde99ce4dfc991829226907e56e5
+0x83d8deb741c107bf678ebb3c5d3b2358506a92d0
+
+0x70392a360e516d73b0245b51160f275f3dcb8c7b
+```
+![Capture d’écran 2024-05-27 à 21 01 58](https://github.com/battletron58/fork.md/assets/170870109/6080e7ca-03b4-41bb-a5e7-d722f424c628)
+![Capture d’écran 2024-05-27 à 21 04 45](https://github.com/battletron58/fork.md/assets/170870109/c6e38681-b746-4826-af9a-f6207035347b)
+![Capture d’écran 2024-05-27 à 21 04 40](https://github.com/battletron58/fork.md/assets/170870109/e9d65c53-5073-4f80-b017-bbe1bb34f93b)
+![Capture d’écran 2024-05-27 à 21 04 35](https://github.com/battletron58/fork.md/assets/170870109/856cc557-1d8f-4d80-afcd-90c209bdd1f2)
+![Capture d’écran 2024-05-27 à 21 04 28](https://github.com/battletron58/fork.md/assets/170870109/70a81e65-cf79-4a40-9d81-5274f4553a59)
+![Capture d’écran 2024-05-27 à 21 04 24](https://github.com/battletron58/fork.md/assets/170870109/097cb726-87e8-4cdc-85b5-8c59d406504a)
+![Capture d’écran 2024-05-27 à 21 04 19](https://github.com/battletron58/fork.md/assets/170870109/c01fe178-fccd-45ef-89e2-6a2946748f2b)
+![Capture d’écran 2024-05-27 à 21 04 14](https://github.com/battletron58/fork.md/assets/170870109/674a7c6e-6c48-47b4-9d2c-5f64fafd2cf1)
+![Capture d’écran 2024-05-27 à 21 03 59](https://github.com/battletron58/fork.md/assets/170870109/485be8a9-6494-4fe4-9a22-73fe40b49521)
+![Capture d’écran 2024-05-27 à 21 03 54](https://github.com/battletron58/fork.md/assets/170870109/1590552d-ffd1-4aba-a1db-ed1fc5eed7e6)
+![Capture d’écran 2024-05-27 à 21 03 47](https://github.com/battletron58/fork.md/assets/170870109/a79564a7-08e1-41a8-b8f8-657ffa79c071)
+![Capture d’écran 2024-05-27 à 21 03 42](https://github.com/battletron58/fork.md/assets/170870109/b24109dc-1603-4a52-bca4-160e96e66142)
+![Capture d’écran 2024-05-27 à 21 03 38](https://github.com/battletron58/fork.md/assets/170870109/415ec2f1-cdb5-4cd2-aab9-c139aae030d4)
+![Capture d’écran 2024-05-27 à 21 03 34](https://github.com/battletron58/fork.md/assets/170870109/3458cfb9-a202-4dbf-8253-3ff76c45ce68)
+![Capture d’écran 2024-05-27 à 21 03 30](https://github.com/battletron58/fork.md/assets/170870109/d170a741-e535-448a-ae3f-9a0ab2faac5f)
+![Capture d’écran 2024-05-27 à 21 03 26](https://github.com/battletron58/fork.md/assets/170870109/351d496d-8e6d-4da6-8f1e-879e2921c018)
+![Capture d’écran 2024-05-27 à 21 03 22](https://github.com/battletron58/fork.md/assets/170870109/aad54949-ec11-4c22-aede-c4a6a4099ec8)
+
+
+
+## CLUSTER 11
+
+The addresses of the cluster share the same Binance deposit address 0x8F7c216502F43F7fC3E74fA9775FA14Ee2f40EA0. 
+
+and also the address 0xb5a03c23869d658bf3aea5e4e07b7f89110f6a2c
+![Capture d’écran 2024-05-27 à 22 50 21](https://github.com/battletron58/fork.md/assets/170870109/d610607d-f987-458f-ae9b-f76300e5ec5c)
+
+
+```
+0xae9333d440cc92fe3cf5b22155a3a8d333555c72
+0xadb4ada7b8e494d4fa2752486225b3ff38e98342
+0x0871dcb6f74fee294c6133285c628f6da45d8308
+0xf032d5dde0ebcb0bd3ffc5d05d2b6c72317e36e5
+0x23dd020d94c948ec69b79b25cef640c0c5d1f2ac
+0xbcd63436486c39fd2a3f8719ef8080ef0e56797b
+0xe899396e8bb79a896ef786ac0a672c7319b03e5c
+0xe8414dbefff2a2464e9f93e371177631593e3878
+0x31a2db6c2aac6fc281e3d3895e3f90d937be64dc
+0x77594e49ee6136bfc25cc0172c883689a7c55619
+0xf25a72bd34523614bee9e218b6ac269b393879ea
+0x3d174af165a43fa57280498a2c426a114798b1ab
+0x9ed0eb06580376415ebd93debf56560f22dacbd4
+0xb5a03c23869d658bf3aea5e4e07b7f89110f6a2c
+0x6cd15f1a499d6b7354d36de861aef52524c395b7
+0x4c57f3119a256e749e07efe1d0660d1a735224a6
+0x854c8c8f3733ea284a8a21bb8835261ed840442f
+0x84ee40d7af7bc6d0acf6ef83c84effb85d0cc8eb
+0x002d44aa03a5d9681510b10bedec74427f8f85d6
+0xda30c99c0522fd1b6070b8f6898b8f449463ae9c
+```
+
+it has exactly the same patern everywhere at the same date when you look at layerzeroscan.
+
+You can also see that he has locked tokens on stagate arbitrum and polygon on the same date once again.
+
+
+![Capture d’écran 2024-05-27 à 22 54 52](https://github.com/battletron58/fork.md/assets/170870109/b354c72d-d665-478d-9b99-d5bc16ea0bdc)
+![Capture d’écran 2024-05-27 à 22 54 46](https://github.com/battletron58/fork.md/assets/170870109/6c78fb3e-9ed5-459f-8912-5c7d26d258fa)
+![Capture d’écran 2024-05-27 à 22 54 39](https://github.com/battletron58/fork.md/assets/170870109/869436f9-147d-4c5b-a49d-2024d3aa9c20)
+![Capture d’écran 2024-05-27 à 22 54 34](https://github.com/battletron58/fork.md/assets/170870109/12397a1f-be15-439f-b52d-729c847ff143)
+![Capture d’écran 2024-05-27 à 22 54 29](https://github.com/battletron58/fork.md/assets/170870109/2e3e8d74-7412-4852-98be-3dd4746d7c7b)
+![Capture d’écran 2024-05-27 à 22 54 24](https://github.com/battletron58/fork.md/assets/170870109/f2c6cff3-3e22-4a94-a42a-1635a4913da0)
+![Capture d’écran 2024-05-27 à 22 54 19](https://github.com/battletron58/fork.md/assets/170870109/046331ee-c857-4744-aa35-32e6e0aa21d0)
+![Capture d’écran 2024-05-27 à 22 54 12](https://github.com/battletron58/fork.md/assets/170870109/9e72dcc5-2093-4c81-bc06-e4553dff4a55)
+![Capture d’écran 2024-05-27 à 22 52 26](https://github.com/battletron58/fork.md/assets/170870109/a4e2895a-316c-4891-aed6-111e74fa6c8d)
+![Capture d’écran 2024-05-27 à 22 52 21](https://github.com/battletron58/fork.md/assets/170870109/eb674b5f-b0fb-4e87-be57-7e2107479842)
+![Capture d’écran 2024-05-27 à 22 52 16](https://github.com/battletron58/fork.md/assets/170870109/1ee6fd6b-03cc-407a-8c36-82192a350e69)
+![Capture d’écran 2024-05-27 à 22 52 10](https://github.com/battletron58/fork.md/assets/170870109/47562006-86cf-475a-98ef-1ef9b7b13d86)
+![Capture d’écran 2024-05-27 à 22 52 05](https://github.com/battletron58/fork.md/assets/170870109/19ee92b5-599b-49dd-8269-84aa5512b6a6)
+![Capture d’écran 2024-05-27 à 22 51 58](https://github.com/battletron58/fork.md/assets/170870109/ada25fb3-4af1-47dd-8265-fcf46cfc36cb)
+![Capture d’écran 2024-05-27 à 22 51 41](https://github.com/battletron58/fork.md/assets/170870109/2dd6cb39-27ef-4adf-8f9b-678e2a303b3b)
+![Capture d’écran 2024-05-27 à 22 51 33](https://github.com/battletron58/fork.md/assets/170870109/465b4a5f-2a4c-4d4a-9b53-93a4a20a43d4)
+![Capture d’écran 2024-05-27 à 22 51 27](https://github.com/battletron58/fork.md/assets/170870109/b6b2e935-e58a-47fb-ae05-c6e51a6816e6)
+![Capture d’écran 2024-05-27 à 22 51 22](https://github.com/battletron58/fork.md/assets/170870109/bd1021e8-81f4-4a94-9377-5e9c19889bac)
+![Capture d’écran 2024-05-27 à 22 51 13](https://github.com/battletron58/fork.md/assets/170870109/fb1adaee-1651-4c46-89c9-1f8b27f67eeb)
+
+## CLUSTER 12
+The first 19 addresses of the cluster share the same Bybit deposit address 0x4CA9e5990f610717c3d37B6dF9120a776b5e1daC. The rest are linked to numerous addresses of the cluster, multiple times.
+
+```
+0x456bef05f697eae3dc566b4cc3b0a55cc77077ad
+0xa2ba9ad3b4b27b167f0318550072d9ae5353af21
+0x26e9e99216d21d8f9589a1cf1c6aa5ff8845467d
+0x012cd16a149f9036ca400cc35c927375e93f85d9
+0x10473bc8823cc2a748a38ce6ec6b4eac262217f2
+0x8971af1007c4053801e9c9732df393bc22bc4633
+0x3cc1bdc971c882cc14717159a947f8b9378c079e
+0x9913c66107b408fb3c59d1421e314e2eb32fa007
+0x3757dec5460646f5523e15af9201b79b8caa3e79
+0x4cadffce408e690f69a249e502af49052b8b617c
+0x4a989c189b7454f30367af66f83264be78e15947
+0x7ab45bc4b9d738c9242aaec7f4de8ff179189993
+0xacda38318c02ed55a9d2149fc4e290e65956793a
+0x955b5a8578ac223ec753c2c19ceaaec10f165bd7
+0x9a52e4505e02e740194931ffa2de77f862b01ef5
+0xb0ccb1eac89e9c73cccd028483300dccb4f8d4f6
+0x1100a9bf2242a08040219edf4c83ec539381ea72
+0x5c92e8593e55cc25aacd703e53e0259ca228ab72
+0xeb740fbdc244d170a52cf6309e250828582596aa
+//
+0xbf1d25cdb2116ff21fd76c89139bace7388ea9ab
+```
+
+
+The addresses all have the same on-chain activity. For example, their latest L0 interaction is the same, the same dapps at the same time in the same order: Stargate 2 months ago, avericks 8 months ago, Stargate 8 months ago, Stargate 10 months ago. LZD Are the same and the rest too.
+
+Détails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The address share the same CEX deposit address, are part of a cluster with multiple links between one another, and have the same on-chain activity. This is a big scale sybil operation, probably the result of scripts.
