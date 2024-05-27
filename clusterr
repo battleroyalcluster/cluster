@@ -681,36 +681,45 @@ You can also see that he has locked tokens on stagate arbitrum and polygon on th
 ![image](https://github.com/battletron58/fork.md/assets/170870109/fb1adaee-1651-4c46-89c9-1f8b27f67eeb)
 
 ## CLUSTER 12
-The first 19 addresses of the cluster share the same Bybit deposit address 0x4CA9e5990f610717c3d37B6dF9120a776b5e1daC. The rest are linked to numerous addresses of the cluster, multiple times.
+
+The 28 addresses of the cluster share the same Okx deposit address 0xCfb2a94c453005Dd8F86A618145f549ba29A0723.
 
 ```
-0x456bef05f697eae3dc566b4cc3b0a55cc77077ad
-0xa2ba9ad3b4b27b167f0318550072d9ae5353af21
-0x26e9e99216d21d8f9589a1cf1c6aa5ff8845467d
-0x012cd16a149f9036ca400cc35c927375e93f85d9
-0x10473bc8823cc2a748a38ce6ec6b4eac262217f2
-0x8971af1007c4053801e9c9732df393bc22bc4633
-0x3cc1bdc971c882cc14717159a947f8b9378c079e
-0x9913c66107b408fb3c59d1421e314e2eb32fa007
-0x3757dec5460646f5523e15af9201b79b8caa3e79
-0x4cadffce408e690f69a249e502af49052b8b617c
-0x4a989c189b7454f30367af66f83264be78e15947
-0x7ab45bc4b9d738c9242aaec7f4de8ff179189993
-0xacda38318c02ed55a9d2149fc4e290e65956793a
-0x955b5a8578ac223ec753c2c19ceaaec10f165bd7
-0x9a52e4505e02e740194931ffa2de77f862b01ef5
-0xb0ccb1eac89e9c73cccd028483300dccb4f8d4f6
-0x1100a9bf2242a08040219edf4c83ec539381ea72
-0x5c92e8593e55cc25aacd703e53e0259ca228ab72
-0xeb740fbdc244d170a52cf6309e250828582596aa
-//
-0xbf1d25cdb2116ff21fd76c89139bace7388ea9ab
+0x8cb508b6cdbab108fed0659c57b0365bd06bee57
+0x24f1d99682e133245cd12f4bdfd81d2d85acef6f
+0x47f3d5b85d3a30d85badf1039ee1b3472275f3a2
+0x5f3752ab3d193c7de7ea1146706b7b15510a7bc9
+0x788bb6a34c8fe6b7febe95c7f2ca2c7905cd0f72
+0x28a6c38b99969e4db0d6e6e36458c0baca2dff8a
+0x591077ce820d765d16b42ade43cf4eebbb125bdc
+0xa5cc60d9095364e406d01f3844ebb623449fd207
+0x8718cb5dcd56e333861f6884fea92ae0393072d5
+0xc01b657c837a543bbda814b9c5c0d9f52f2db654
+0x10e788d236c67ef980347416a35e8dc6f318ef68
+0xb7dde9d44a44d521a5fac7fe4fd23d04ea5b4241
+0xdee79d76086deadc6d720cc89f877efd17a014a0
+0x3cb93525778a11de7fa7b02acb8f2bd3a80d6728
+0x9c8166cfc8f97b5df42f9edb0d4adf7087fd3542
+0x44e247217cdda6a59508b112adf9451c83f59fc4
+0xce097e5fcfd8ac5e167e2796f0027db49d970409
+0x67eb5699abc77213ebbed70f7e4f5fd6b4847570
+0xcc99728e33018f9ea4e703ae1bf0ccd96280fce9
+0xb5e958e805fcdd9d370ca287412e8210c2f501e2
+0x1e41d858ed439ed2e6fc7be4b7a381f7ada26ca3
+0x1f1fa07ba8a7dd1d21cedf4635a14e356e0c9a3e
+0x3bb751b96830a2844c3c07aa2c2a43205b22de30
+0x5c5388e9465d45faf3ea7f01c7c04b8536adc6bf
+0x92e4576e4c622f43732f55889954745b4d74317a
+0xc63f4cabcdd0ca9f75249744561ccd4af2d5f68d
+0xfad830d5aea0ceb5293d492e781a1896c2688292
+0xfcf742dd3b3c97929982f1e00cd520972815449c
 ```
 
 
 The addresses all have the same on-chain activity. For example, their latest L0 interaction is the same, the same dapps at the same time in the same order: Stargate 2 months ago, avericks 8 months ago, Stargate 8 months ago, Stargate 10 months ago. LZD Are the same and the rest too.
 
 Détails
+
 
 
 
@@ -745,5 +754,58 @@ Détails
 ![image](https://github.com/battleroyalcluster/cluster/assets/170982857/b3f9f960-6277-48a0-bd3e-c93714f97ab6)
 ![image](https://github.com/battleroyalcluster/cluster/assets/170982857/a0548cdc-5bd9-4965-a049-0e8267ef618a)
 ![image](https://github.com/battleroyalcluster/cluster/assets/170982857/75366d77-84a0-49fa-ae6c-c4829820d15a)
+## CLUSTER 13
+
+The first 19 addresses of the cluster share the same Bybit deposit address 0x4CA9e5990f610717c3d37B6dF9120a776b5e1daC. The rest are linked to numerous addresses of the cluster, multiple times.
+
+
+
+```
+0x456bef05f697eae3dc566b4cc3b0a55cc77077ad
+0xa2ba9ad3b4b27b167f0318550072d9ae5353af21
+0x26e9e99216d21d8f9589a1cf1c6aa5ff8845467d
+0x012cd16a149f9036ca400cc35c927375e93f85d9
+0x10473bc8823cc2a748a38ce6ec6b4eac262217f2
+0x8971af1007c4053801e9c9732df393bc22bc4633
+0x3cc1bdc971c882cc14717159a947f8b9378c079e
+0x9913c66107b408fb3c59d1421e314e2eb32fa007
+0x3757dec5460646f5523e15af9201b79b8caa3e79
+0x4cadffce408e690f69a249e502af49052b8b617c
+0x4a989c189b7454f30367af66f83264be78e15947
+0x7ab45bc4b9d738c9242aaec7f4de8ff179189993
+0xacda38318c02ed55a9d2149fc4e290e65956793a
+0x955b5a8578ac223ec753c2c19ceaaec10f165bd7
+0x9a52e4505e02e740194931ffa2de77f862b01ef5
+0xb0ccb1eac89e9c73cccd028483300dccb4f8d4f6
+0x1100a9bf2242a08040219edf4c83ec539381ea72
+0x5c92e8593e55cc25aacd703e53e0259ca228ab72
+0xeb740fbdc244d170a52cf6309e250828582596aa
+//
+0xbf1d25cdb2116ff21fd76c89139bace7388ea9ab
+```
+
+
+
+The addresses all have the same on-chain activity. For example, their latest L0 interaction is the same, the same dapps at the same time in the same order: Stargate 2 months ago, avericks 8 months ago, Stargate 8 months ago, Stargate 10 months ago. LZD Are the same and the rest too.
+
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/32795b56-6b96-45b2-a70d-5b31d7c7ecab)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/702b5e38-7bd8-4582-a01a-cdaa3d38b677)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/8a534074-cde3-4e25-b666-15ca5eb13624)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/ea3c9253-34e5-47bd-8e05-0809c0bc6d78)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/b45e4b7f-9e5a-47ff-9417-587114e6a253)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/4e200bb9-5b10-4930-98f7-9a176b1c23df)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/a6747c9b-fd0e-4670-8651-1294987c5c8d)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/7979a420-4add-4a8a-b1d7-19e18af22348)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/388fcba0-f65d-4c31-a4f6-8c32acd445d9)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/9cb58be1-90ba-45d5-84b0-9b7c434a8d50)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/83a8c106-9381-4e99-a2a9-ddebd160acdc)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/513a1fc8-9ffe-4d3c-b3d7-b31a95ae7f03)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/c2152474-69c0-4020-bdfd-611bd7b652c8)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/b07ca12c-5f51-4e0c-8089-a935d53f4df7)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/a0210731-34bb-40fd-8e42-57b10354aa43)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/afd44b35-ea32-42fb-8408-9b08829d28d9)
+![image](https://github.com/battleroyalcluster/cluster/assets/170982857/4adf59f9-0e6a-4293-ad36-ded15debc38d)
+
+
 
 The address share the same CEX deposit address, are part of a cluster with multiple links between one another, and have the same on-chain activity. This is a big scale sybil operation, probably the result of scripts.
